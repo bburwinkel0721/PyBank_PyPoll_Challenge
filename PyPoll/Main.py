@@ -1,10 +1,15 @@
-import pandas
+# Import in the CSV package so that we can work with the CSV
+import csv
 
-# converts the CVS file into a dataframe that we can use
-poll_data = pandas.read_csv("./Resources/election_data.csv")
+# Read the CSV file and then turn candidate specific data into a list of values
+with open('./Resources/election_data.csv', 'r') as file:
+    reader = csv.reader(file)
+    candidates = []
+    for row in reader:
+        candidates.append(row[2])
 
-# Separates out the column that contains the candidates names
-candidates = poll_data.Candidate.tolist()
+# Remove the header in the list
+candidates.pop(0)
 
 # Create a separate list that contains only one entry of each candidates name
 names = list(set(candidates))
@@ -24,7 +29,7 @@ candidate_votes = {candidate_1: candidates.count(candidate_1),
 candidate_1_votes = candidates.count(candidate_1)
 candidate_2_votes = candidates.count(candidate_2)
 candidate_3_votes = candidates.count(candidate_3)
-total_votes = poll_data.Candidate.count()
+total_votes = len(candidates)
 
 # Variables for the percentage of votes for each candidate
 candidate_1_Percentage = round(candidate_votes[candidate_1]/total_votes*100,3)
