@@ -4,15 +4,15 @@ import csv
 # Reads the CSV file and then turns the dates and profit/losses data into two lists
 with open('./Resources/budget_data.csv', 'r') as file:
     reader = csv.reader(file)
+    # Reads the headers of the columns into a variable
+    header = next(reader)
     dates = []
     profit_losses_text = []
     for row in reader:
         dates.append(row[0])
         profit_losses_text.append(row[1])
 
-# Removes the headers in the two lists
-dates.pop(0)
-profit_losses_text.pop(0)
+
 
 # Creates a new list for profit/losses but with the values converted into integers
 profit_losses = [int(value) for value in profit_losses_text]

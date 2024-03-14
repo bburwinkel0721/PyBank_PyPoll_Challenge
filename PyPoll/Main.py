@@ -4,12 +4,12 @@ import csv
 # Read the CSV file and then turn candidate specific data into a list of values
 with open('./Resources/election_data.csv', 'r') as file:
     reader = csv.reader(file)
+    # Reads the headers of the columns into a variable
+    header = next(reader)
     candidates = []
     for row in reader:
         candidates.append(row[2])
 
-# Remove the header in the list
-candidates.pop(0)
 
 # Create a separate list that contains only one entry of each candidates name
 names = list(set(candidates))
