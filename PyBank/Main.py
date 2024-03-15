@@ -6,7 +6,7 @@ with open('./Resources/budget_data.csv', 'r') as file:
     reader = csv.reader(file)
     # Reads the headers of the columns into a variable
     header = next(reader)
-    
+    # Creates 2 lists for dates and profit/losses 
     dates = []
     profit_losses_text = []
     for row in reader:
