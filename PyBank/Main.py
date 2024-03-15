@@ -43,18 +43,18 @@ min_change_date = dates[changes.index(min_change) + 1]
 
 # Prints out the Financial Analysis results to the terminal
 print("Financial Analysis \n-----------------------")
-print("Total Months: {}".format(total_months))
-print("Total: ${}".format(total))
-print("Average Change: ${}".format(average_changes))
-print("Greatest Increase in Profits: {} (${})".format(max_change_date,max_change))
-print("Greatest Decrease in Profits: {} (${})".format(min_change_date,min_change))
+print(f"Total Months: {total_months}")
+print(f"Total: ${total}")
+print(f"Average Change: ${average_changes}")
+print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
+print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
 
 # Writes out the Financial Analysis results to a text file
 with open('./Analysis/Financial_Analysis_Results.txt', 'w') as f:
     f.write("Results from my Financial_Analysis:\n")
-    f.write("Total Months: {}\n".format(total_months))
-    f.write("Total: ${}\n".format(total))
-    f.write("Average Change: ${}\n".format(average_changes))
-    f.write("Greatest Increase in Profits: {} (${})\n".format(max_change_date,max_change))
-    f.write("Greatest Decrease in Profits: {} (${})\n".format(min_change_date,min_change))
+    f.write(f"Total Months: {total_months}\n")
+    f.write(f"Total: ${total}\n")
+    f.write(f"Average Change: ${average_changes}\n")
+    f.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
+    f.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
     
