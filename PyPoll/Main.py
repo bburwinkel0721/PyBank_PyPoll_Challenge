@@ -49,8 +49,8 @@ print(f"Winner: {winner}")
 # Writes out the election results to a text file
 with open('./Analysis/Poll_Results.txt', 'w') as f:
     f.write("Results from the Elections:\n")
-    f.write("Total Votes: {}\n-------------------------\n".format(total_votes))
-    f.write("{}: {}% ({})\n".format(candidate_1, candidate_1_Percentage, candidate_1_votes))
-    f.write("{}: {}% ({})\n".format(candidate_2, candidate_2_Percentage, candidate_2_votes))
-    f.write("{}: {}% ({})\n-------------------------\n ".format(candidate_3, candidate_3_Percentage,candidate_3_votes))
-    f.write("Winner: {}".format(winner))
+    f.write(f"Total Votes: {total_votes}\n-------------------------\n")
+    f.write(f"{candidate_1}: {candidate_1_Percentage}% ({candidate_1_votes})\n")
+    f.write(f"{candidate_2}: {candidate_2_Percentage}% ({candidate_2_votes})\n")
+    f.write(f"{candidate_3}: {candidate_3_Percentage}% ({candidate_3_votes})\n-------------------------\n")
+    f.write(f"Winner: {winner}")
