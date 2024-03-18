@@ -2,8 +2,8 @@
 import csv
 
 # Reads the CSV file and then turn candidate specific data into a list of values
-with open('./Resources/election_data.csv', 'r') as file:
-    reader = csv.reader(file)
+with open('./Resources/election_data.csv', 'r') as election_data:
+    reader = csv.reader(election_data)
     # Reads the headers of the columns into a variable
     header = next(reader)
     # Creates a list of all candidates votes
@@ -47,10 +47,10 @@ print(f"{candidate_3}: {candidate_3_Percentage}% ({candidate_3_votes})\n--------
 print(f"Winner: {winner}")
 
 # Writes out the election results to a text file
-with open('./Analysis/Poll_Results.txt', 'w') as f:
-    f.write("Results from the Elections:\n")
-    f.write(f"Total Votes: {total_votes}\n-------------------------\n")
-    f.write(f"{candidate_1}: {candidate_1_Percentage}% ({candidate_1_votes})\n")
-    f.write(f"{candidate_2}: {candidate_2_Percentage}% ({candidate_2_votes})\n")
-    f.write(f"{candidate_3}: {candidate_3_Percentage}% ({candidate_3_votes})\n-------------------------\n")
-    f.write(f"Winner: {winner}")
+with open('./Analysis/Poll_Results.txt', 'w') as election_results:
+    election_results.write("Results from the Elections:\n")
+    election_results.write(f"Total Votes: {total_votes}\n-------------------------\n")
+    election_results.write(f"{candidate_1}: {candidate_1_Percentage}% ({candidate_1_votes})\n")
+    election_results.write(f"{candidate_2}: {candidate_2_Percentage}% ({candidate_2_votes})\n")
+    election_results.write(f"{candidate_3}: {candidate_3_Percentage}% ({candidate_3_votes})\n-------------------------\n")
+    election_results.write(f"Winner: {winner}")

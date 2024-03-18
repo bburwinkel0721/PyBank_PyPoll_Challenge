@@ -2,8 +2,8 @@
 import csv
 
 # Reads the CSV file and then turns the dates and profit/losses data into two lists
-with open('./Resources/budget_data.csv', 'r') as file:
-    reader = csv.reader(file)
+with open('./Resources/budget_data.csv', 'r') as budget_data:
+    reader = csv.reader(budget_data)
     # Reads the headers of the columns into a variable
     header = next(reader)
     # Creates 2 lists for dates and profit/losses 
@@ -50,11 +50,11 @@ print(f"Greatest Increase in Profits: {max_change_date} (${max_change})")
 print(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
 
 # Writes out the Financial Analysis results to a text file
-with open('./Analysis/Financial_Analysis_Results.txt', 'w') as f:
-    f.write("Results from my Financial_Analysis:\n")
-    f.write(f"Total Months: {total_months}\n")
-    f.write(f"Total: ${total}\n")
-    f.write(f"Average Change: ${average_changes}\n")
-    f.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
-    f.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
+with open('./Analysis/Financial_Analysis_Results.txt', 'w') as analysis:
+    analysis.write("Results from my Financial_Analysis:\n")
+    analysis.write(f"Total Months: {total_months}\n")
+    analysis.write(f"Total: ${total}\n")
+    analysis.write(f"Average Change: ${average_changes}\n")
+    analysis.write(f"Greatest Increase in Profits: {max_change_date} (${max_change})\n")
+    analysis.write(f"Greatest Decrease in Profits: {min_change_date} (${min_change})")
     
