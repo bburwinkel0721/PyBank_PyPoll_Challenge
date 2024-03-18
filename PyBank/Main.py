@@ -13,7 +13,7 @@ with open('./Resources/budget_data.csv', 'r') as budget_data:
         dates.append(row[0])
         profit_losses_text.append(row[1])
 
-
+#Commit
 
 # Creates a new list for profit/losses but with the values converted into integers
 profit_losses = [int(value) for value in profit_losses_text]
