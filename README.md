@@ -1,4 +1,4 @@
-# Python-Challenge
+# PyBank_PyPoll_Challenge
 ## PyBank
 - Task was to create a Python script that analyzes the financial records of a company to calculate each of the following values:
   - The total number of months included in the dataset
